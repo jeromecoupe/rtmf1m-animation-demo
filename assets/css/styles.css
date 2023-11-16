@@ -197,7 +197,7 @@ body.has-menu {
     display: block;
   }
 
-  .c-navbar__navcompact {
+  .c-navbar__hamburger {
     display: none;
   }
 }
