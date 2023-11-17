@@ -108,6 +108,16 @@
   }
 }
 
+@keyframes heroParallax {
+  0% {
+    object-position: 50% 20%;
+  }
+
+  0% {
+    object-position: 50% 0%;
+  }
+}
+
 /* ===================================
 =nuke margin block start
 =================================== */
@@ -144,29 +154,121 @@ body.has-menu {
 /* ===================================
 =header
 =================================== */
-.c-siteheader {
+.c-heroheader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  background-color: var(--color-background-inverse);
+}
+
+/* header navbar */
+.c-heroheader__navbar {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  z-index: 2;
+}
+
+/* header image */
+.c-heroheader__img {
+  position: relative;
+  z-index: 1;
+
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.c-heroheader__img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.c-heroheader__img > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+
+  animation-name: heroParallax;
+  animation-timeline: scroll(block);
+  animation-range: entry 0% exit 100%;
+  animation-fill-mode: both;
+}
+
+/* header content */
+.c-heroheader__content {
+  grid-column: 1 / -1;
+  grid-row: 2 / 3;
+  z-index: 2;
+  padding-block: calc(42 / 16 * 1rem);
+  color: var(--color-white);
+}
+
+@media all and (min-width: 750px) {
+  .c-heroheader__content {
+    padding-block: calc(60 / 16 * 1rem);
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .c-heroheader__content {
+    padding-block: calc(120 / 16 * 1rem);
+  }
+}
+
+.c-heroheader__title {
+  font-weight: 500;
+  font-size: clamp(39 / 16 * 1rem, 1rem + 7vw, 119 / 16 * 1rem);
+  font-family: var(--fontstack-alt);
+  line-height: 1.02;
+  margin-bottom: 0.5em;
+}
+
+.c-heroheader__title > span {
+  display: block;
+}
+
+.c-heroheader__intro {
+  max-width: 480px;
+}
+
+/* ===================================
+=navbar
+=================================== */
+
+.c-navbar {
   --vpadding: calc(24 / 16 * 1rem);
 
   padding-block: var(--vpadding);
-  background-color: var(--color-background-inverse);
-  color: var(--color-text-inverse);
+  color: var(--color-white);
 
   border-block-end: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 @media all and (min-width: 750px) {
-  .c-siteheader {
+  .c-navbar {
     --vpadding: calc(30 / 16 * 1rem);
   }
 }
 
 @media all and (min-width: 1024px) {
-  .c-siteheader {
+  .c-navbar {
     --vpadding: calc(36 / 16 * 1rem);
   }
 }
 
-.c-navbar {
+.c-navbar__content {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -215,19 +317,39 @@ body.has-menu {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  gap: calc(12 / 16 * 1rem);
+  gap: calc(24 / 16 * 1rem);
 }
 
 .c-mainnav__link {
+  position: relative;
+
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.2;
   font-family: var(--fontstack-alt);
 
   display: inline-block;
-  padding: calc(6 / 16 * 1rem);
+  padding: calc(5 / 16 * 1rem) 0;
   text-decoration: none;
   color: var(--color-text-inverse);
+}
+
+.c-mainnav__link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: var(--color-text-inverse);
+  transform: scaleX(0);
+  transform-origin: 50% 50%;
+
+  transition: transform 0.2s ease-out;
+}
+
+.c-mainnav__link:hover::after {
+  transform: scaleX(1);
 }
 
 /* ===================================
@@ -235,20 +357,21 @@ body.has-menu {
 =================================== */
 
 .c-mobilemenu {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-
+  z-index: 9999;
   box-sizing: border-box;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+
   padding: calc(24 / 16 * 1rem);
   background-color: var(--color-background-inverse);
-  z-index: 999;
 
   /* caché par defaut */
   display: none;
@@ -322,6 +445,12 @@ body.has-menu {
   gap: 6px;
 }
 
+@media all and (min-width: 750px) {
+  .c-mobilenav {
+    gap: 12px;
+  }
+}
+
 .c-mobilenav__item {
   overflow: hidden;
 }
@@ -336,39 +465,23 @@ body.has-menu {
   text-decoration: none;
 }
 
+@media all and (min-width: 750px) {
+  .c-mobilenav__link {
+    font-size: calc(61 / 16 * 1rem);
+  }
+}
+
 .has-menu .c-mobilenav__link {
   --linkAnimDuration: 0.3s;
   --linkAnimDelay: 0s;
 
+  /*
   animation-name: slideUp;
   animation-duration: var(--linkAnimDuration);
   animation-timing-function: ease-out;
   animation-delay: calc(var(--menuAnimDuration) + var(--linkAnimDelay));
   animation-fill-mode: both;
-}
-
-/* ===================================
-=home intro
-=================================== */
-
-.c-homeintro {
-  display: grid;
-}
-
-.c-homeintro__title {
-  font-weight: 500;
-  font-size: clamp(39 / 16 * 1rem, 1rem + 7vw, 119 / 16 * 1rem);
-  font-family: var(--fontstack-alt);
-  line-height: 1.14;
-  margin-bottom: 0.5em;
-}
-
-.c-homeintro__title > span {
-  display: block;
-}
-
-.c-homeintro__text {
-  max-width: 480px;
+  */
 }
 
 /* ===================================
@@ -393,11 +506,13 @@ body.has-menu {
   overflow: hidden;
 }
 
-.c-projectcard__media img {
-  transition: transform 0.2s ease-out;
+.c-projectcard__img {
+  filter: blur(1px);
+  transition: transform 0.2s ease-out, filter 0.2s ease-out;
 }
 
-.c-projectcard__media:hover img {
+.c-projectcard:hover .c-projectcard__img {
+  filter: blur(0);
   transform: scale(1.012);
 }
 
@@ -436,11 +551,11 @@ body.has-menu {
   gap: 6px;
 }
 
-.c-projectcard__title span {
+.c-projectcard__title > a > span {
   transition: transform var(--title-anim-duration) ease-out;
 }
 
-.c-projectcard:hover .c-projectcard__title span {
+.c-projectcard__title > a:hover > span {
   transform: translate3d(12px, 0, 0);
 }
 
@@ -543,15 +658,6 @@ body.has-menu {
   }
 }
 
-/* -----------------------------------
-=pagesection variants
------------------------------------ */
-
-.c-pagesection--inverse {
-  background-color: var(--color-background-inverse);
-  color: var(--color-text-inverse);
-}
-
 /* ===================================
 =container 
 =================================== */
@@ -589,13 +695,13 @@ body.has-menu {
 =================================== */
 
 .u-mb-none {
-  margin-block: 0;
+  margin-block: 0 !important;
 }
 
 .u-mbs-none {
-  margin-block-start: 0;
+  margin-block-start: 0 !important;
 }
 
 .u-mbe-none {
-  margin-block-end: 0;
+  margin-block-end: 0 !important;
 }

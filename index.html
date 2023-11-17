@@ -8,102 +8,106 @@
     <script type="module" src="assets/js/main.js"></script>
   </head>
   <body>
-    <header class="c-siteheader">
-      <div class="l-container">
+    <header class="c-heroheader">
+      <div class="c-heroheader__navbar">
         <div class="c-navbar">
-          <p class="c-navbar__logo">
-            <a href="">
-              <img src="assets/img/logo.svg" alt="CasaProds" />
-            </a>
-          </p>
-          <nav class="c-navbar__nav">
-            <ul class="c-mainnav">
-              <li class="c-mainnav__item">
-                <a class="c-mainnav__link" href="#">Work</a>
-              </li>
-              <li class="c-mainnav__item">
-                <a class="c-mainnav__link" href="#">Studio</a>
-              </li>
-              <li class="c-mainnav__item">
-                <a class="c-mainnav__link" href="#">News</a>
-              </li>
-              <li class="c-mainnav__item">
-                <a class="c-mainnav__link" href="#">Contact</a>
-              </li>
-            </ul>
-          </nav>
-          <p class="c-navbar__hamburger">
-            <a href="#footernav" class="js-menutrigger">
-              <img src="assets/img/icon_menuopen.svg" alt="Open navigation" />
-            </a>
-          </p>
-        </div>
-        <div class="c-mobilemenu js-mobilemenu">
-          <div class="c-mobilemenu__actions">
-            <button class="c-mobilemenu__close js-menutrigger">
-              Close menu
-            </button>
-          </div>
-
-          <div class="c-mobilemenu__body">
-            <nav>
-              <ul class="c-mobilenav">
-                <li class="c-mobilenav__item">
-                  <a
-                    href="#"
-                    class="c-mobilenav__link"
-                    style="--linkAnimDelay: 0s">
-                    Work
-                  </a>
+          <div class="l-container c-navbar__content">
+            <p class="c-navbar__logo">
+              <a href="">
+                <img src="assets/img/logo.svg" alt="CasaProds" />
+              </a>
+            </p>
+            <nav class="c-navbar__nav">
+              <ul class="c-mainnav">
+                <li class="c-mainnav__item">
+                  <a class="c-mainnav__link" href="#">Work</a>
                 </li>
-                <li class="c-mobilenav__item">
-                  <a
-                    href="#"
-                    class="c-mobilenav__link"
-                    style="--linkAnimDelay: 0.1s">
-                    Studio
-                  </a>
+                <li class="c-mainnav__item">
+                  <a class="c-mainnav__link" href="#">Studio</a>
                 </li>
-                <li class="c-mobilenav__item">
-                  <a
-                    href="#"
-                    class="c-mobilenav__link"
-                    style="--linkAnimDelay: 0.2s">
-                    News
-                  </a>
+                <li class="c-mainnav__item">
+                  <a class="c-mainnav__link" href="#">News</a>
                 </li>
-                <li class="c-mobilenav__item">
-                  <a
-                    href="#"
-                    class="c-mobilenav__link"
-                    style="--linkAnimDelay: 0.3s">
-                    Contact
-                  </a>
+                <li class="c-mainnav__item">
+                  <a class="c-mainnav__link" href="#">Contact</a>
                 </li>
               </ul>
             </nav>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <main>
-      <div class="c-pagesection c-pagesection--inverse">
-        <div class="l-container">
-          <div class="c-homeintro">
-            <h1 class="c-homeintro__title">
-              <span>Designing</span>
-              <span>Online</span>
-              <span>Experiences</span>
-            </h1>
-            <p class="c-homeintro__text">
-              We love web projects of all kinds and specialise in publishing
-              platforms and e-commerce websites. Extra points for projects
-              related to streetwear and skateboarding.
+            <p class="c-navbar__hamburger">
+              <a href="#footernav" class="js-menutrigger">
+                <img src="assets/img/icon_menuopen.svg" alt="Open navigation" />
+              </a>
             </p>
           </div>
         </div>
       </div>
+      <div class="c-heroheader__content">
+        <div class="l-container">
+          <h1 class="c-heroheader__title">
+            <span>Web</span>
+            <span>Design</span>
+            <span>Astronauts</span>
+          </h1>
+          <p class="c-heroheader__intro">
+            We love web projects of all kinds and specialise in publishing
+            platforms and e-commerce websites. Extra points for projects related
+            to streetwear and skateboarding.
+          </p>
+        </div>
+      </div>
+      <div class="c-heroheader__img">
+        <img
+          src="assets/img/hero_images/home_astronaut.jpg"
+          srcset=""
+          decoding="async"
+          alt="" />
+      </div>
+
+      <div class="c-mobilemenu js-mobilemenu">
+        <div class="c-mobilemenu__actions">
+          <button class="c-mobilemenu__close js-menutrigger">Close menu</button>
+        </div>
+        <div class="c-mobilemenu__body">
+          <nav>
+            <ul class="c-mobilenav">
+              <li class="c-mobilenav__item">
+                <a
+                  href="#"
+                  class="c-mobilenav__link"
+                  style="--linkAnimDelay: 0s">
+                  Work
+                </a>
+              </li>
+              <li class="c-mobilenav__item">
+                <a
+                  href="#"
+                  class="c-mobilenav__link"
+                  style="--linkAnimDelay: 0.1s">
+                  Studio
+                </a>
+              </li>
+              <li class="c-mobilenav__item">
+                <a
+                  href="#"
+                  class="c-mobilenav__link"
+                  style="--linkAnimDelay: 0.2s">
+                  News
+                </a>
+              </li>
+              <li class="c-mobilenav__item">
+                <a
+                  href="#"
+                  class="c-mobilenav__link"
+                  style="--linkAnimDelay: 0.3s">
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
       <div class="c-pagesection">
         <div class="l-container">
           <h2 class="c-h2">Selected Projects</h2>
@@ -112,7 +116,10 @@
               <article class="c-projectcard">
                 <div class="c-projectcard__media">
                   <a href="#">
-                    <img class="o-fluidimg" src="assets/img/bmx.jpg" alt="" />
+                    <img
+                      class="c-projectcard__img o-fluidimg"
+                      src="assets/img/projects/bmx.jpg"
+                      alt="" />
                   </a>
                 </div>
                 <div class="c-projectcard__body">
@@ -127,7 +134,10 @@
               <article class="c-projectcard">
                 <div class="c-projectcard__media">
                   <a href="#">
-                    <img class="o-fluidimg" src="assets/img/skate.jpg" alt="" />
+                    <img
+                      class="c-projectcard__img o-fluidimg"
+                      src="assets/img/projects/skate.jpg"
+                      alt="" />
                   </a>
                 </div>
                 <div class="c-projectcard__body">
@@ -142,7 +152,10 @@
               <article class="c-projectcard">
                 <div class="c-projectcard__media">
                   <a href="#">
-                    <img class="o-fluidimg" src="assets/img/beer.jpg" alt="" />
+                    <img
+                      class="c-projectcard__img o-fluidimg"
+                      src="assets/img/projects/beer.jpg"
+                      alt="" />
                   </a>
                 </div>
                 <div class="c-projectcard__body">
@@ -157,7 +170,10 @@
               <article class="c-projectcard">
                 <div class="c-projectcard__media">
                   <a href="#">
-                    <img class="o-fluidimg" src="assets/img/girl.jpg" alt="" />
+                    <img
+                      class="c-projectcard__img o-fluidimg"
+                      src="assets/img/projects/girl.jpg"
+                      alt="" />
                   </a>
                 </div>
                 <div class="c-projectcard__body">
