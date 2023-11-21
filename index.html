@@ -11,7 +11,7 @@
     <header class="c-heroheader">
       <div class="c-heroheader__navbar">
         <div class="c-navbar">
-          <div class="l-container c-navbar__content">
+          <div class="l-container l-container--large c-navbar__content">
             <p class="c-navbar__logo">
               <a href="">
                 <img src="assets/img/logo.svg" alt="CasaProds" />
@@ -51,7 +51,8 @@
           <p class="c-heroheader__intro">
             We love web projects of all kinds and specialise in publishing
             platforms and e-commerce websites. Extra points for projects related
-            to streetwear and skateboarding.
+            to urban culture like graffiti, skateboarding, BMX, hip-hop or
+            turntables.
           </p>
         </div>
       </div>
@@ -110,81 +111,175 @@
     <main>
       <div class="c-pagesection">
         <div class="l-container">
-          <h2 class="c-h2">Selected Projects</h2>
-          <ul class="l-grid l-grid--2cols@medium">
-            <li>
-              <article class="c-projectcard">
-                <div class="c-projectcard__media">
-                  <a href="#">
-                    <img
-                      class="c-projectcard__img o-fluidimg"
-                      src="assets/img/projects/bmx.jpg"
-                      alt="" />
+          <div class="c-pagesection__block">
+            <h2 class="c-h2">Projects</h2>
+            <ul class="c-projectslist">
+              <li class="c-projectslist__item">
+                <article class="c-projectcard">
+                  <a class="c-projectcard__link" href="#">
+                    <div class="c-projectcard__media">
+                      <img
+                        class="c-projectcard__img o-fluidimg"
+                        src="assets/img/projects/bmx.jpg"
+                        alt="BMX figure with the bike in the air" />
+                    </div>
+                    <h2 class="c-projectcard__title">
+                      Throw your bike in the air
+                    </h2>
+                    <p class="c-projectcard__description">
+                      European BMX Championship
+                    </p>
                   </a>
-                </div>
-                <div class="c-projectcard__body">
-                  <p class="c-projectcard__tags">Design, Front-end, CMS</p>
-                  <h2 class="c-projectcard__title">
-                    <a href="#"><span>Throw your bike in the air</span></a>
-                  </h2>
-                </div>
-              </article>
-            </li>
-            <li>
-              <article class="c-projectcard">
-                <div class="c-projectcard__media">
-                  <a href="#">
-                    <img
-                      class="c-projectcard__img o-fluidimg"
-                      src="assets/img/projects/skate.jpg"
-                      alt="" />
+                </article>
+              </li>
+              <li class="c-projectslist__item">
+                <article class="c-projectcard">
+                  <a class="c-projectcard__link" href="#">
+                    <div class="c-projectcard__media">
+                      <img
+                        class="c-projectcard__img o-fluidimg"
+                        src="assets/img/projects/girl.jpg"
+                        alt="Girl smiling with a camera in her hands" />
+                    </div>
+                    <h2 class="c-projectcard__title">Women in filmmaking</h2>
+                    <p class="c-projectcard__description">
+                      A feminine perspective on filmmaking
+                    </p>
                   </a>
-                </div>
-                <div class="c-projectcard__body">
-                  <p class="c-projectcard__tags">Design, Front-end, CMS</p>
-                  <h2 class="c-projectcard__title">
-                    <a href="#"><span>Skate or die</span></a>
-                  </h2>
-                </div>
-              </article>
-            </li>
-            <li>
-              <article class="c-projectcard">
-                <div class="c-projectcard__media">
-                  <a href="#">
-                    <img
-                      class="c-projectcard__img o-fluidimg"
-                      src="assets/img/projects/beer.jpg"
-                      alt="" />
+                </article>
+              </li>
+              <li class="c-projectslist__item">
+                <article class="c-projectcard">
+                  <a class="c-projectcard__link" href="#">
+                    <div class="c-projectcard__media">
+                      <img
+                        class="c-projectcard__img o-fluidimg"
+                        src="assets/img/projects/graffiti.jpg"
+                        alt="BMX figure with the bike in the air" />
+                    </div>
+                    <h2 class="c-projectcard__title">
+                      The many faces of street art
+                    </h2>
+                    <p class="c-projectcard__description">
+                      Virtual street art tour of Brussels
+                    </p>
                   </a>
-                </div>
-                <div class="c-projectcard__body">
-                  <p class="c-projectcard__tags">Design, Front-end, CMS</p>
-                  <h2 class="c-projectcard__title">
-                    <a href="#"><span>Beer lovers paradise</span></a>
-                  </h2>
-                </div>
-              </article>
-            </li>
-            <li>
-              <article class="c-projectcard">
-                <div class="c-projectcard__media">
-                  <a href="#">
-                    <img
-                      class="c-projectcard__img o-fluidimg"
-                      src="assets/img/projects/girl.jpg"
-                      alt="" />
+                </article>
+              </li>
+              <li class="c-projectslist__item">
+                <article class="c-projectcard">
+                  <a class="c-projectcard__link" href="#">
+                    <div class="c-projectcard__media">
+                      <img
+                        class="c-projectcard__img o-fluidimg"
+                        src="assets/img/projects/skate.jpg"
+                        alt="Skater jumping on top of a halfpipe" />
+                    </div>
+                    <h2 class="c-projectcard__title">Skate or Die</h2>
+                    <p class="c-projectcard__description">
+                      Podcast covering the skateboarding scene
+                    </p>
                   </a>
-                </div>
-                <div class="c-projectcard__body">
-                  <p class="c-projectcard__tags">Design, Front-end, CMS</p>
-                  <h2 class="c-projectcard__title">
-                    <a href="#"><span>Girls who film</span></a>
-                  </h2>
-                </div>
-              </article>
-            </li>
-          </ul>
+                </article>
+              </li>
+            </ul>
+          </div>
+
+          <div class="c-pagesection__block">
+            <div class="c-reel">
+              <div class="c-reel__player">
+                <a class="c-reel__playerlink" href="#">
+                  <img
+                    src="assets/img/atomium.jpg"
+                    class="c-reel__playerimage"
+                    with="800"
+                    heigh="450"
+                    loading="lazy"
+                    decoding="async"
+                    alt="Atomium" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="c-pagesection__block">
+            <ul class="c-gallery">
+              <li class="c-gallery__item c-gallery__item--large">
+                <img
+                  src="assets/img/gallery/hat.jpg"
+                  class="c-gallery__img"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  alt="A guy with a beanie looking at a computer" />
+              </li>
+              <li class="c-gallery__item">
+                <img
+                  src="assets/img/gallery/code.jpg"
+                  class="c-gallery__img"
+                  width="400"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Some code on a screen" />
+              </li>
+              <li class="c-gallery__item">
+                <img
+                  src="assets/img/gallery/fries.jpg"
+                  class="c-gallery__img"
+                  width="400"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Belgian fries on a table" />
+              </li>
+              <li class="c-gallery__item">
+                <img
+                  src="assets/img/gallery/beer.jpg"
+                  class="c-gallery__img"
+                  width="400"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  alt="A glass of beer" />
+              </li>
+              <li class="c-gallery__item">
+                <img
+                  src="assets/img/gallery/hen.jpg"
+                  class="c-gallery__img"
+                  width="400"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  alt="Crazy looking hen" />
+              </li>
+              <li class="c-gallery__item c-gallery__item--large">
+                <img
+                  src="assets/img/gallery/reception.jpg"
+                  class="c-gallery__img"
+                  width="800"
+                  height="600"
+                  loading="lazy"
+                  decoding="async"
+                  alt="A girl smiling in an office" />
+              </li>
+            </ul>
+          </div>
+
+          <div class="c-pagesection__block u-align-center">
+            <h2 class="c-h2">Get in touch</h2>
+            <address>
+              <p>
+                CasaProds<br />
+                Rue aux laines, 120<br />
+                1000 Brussels<br />
+                Belgium
+              </p>
+            </address>
+            <p><a href="#">Get directions</a></p>
+            <p><a href="#">hello@casaprods.be</a></p>
+          </div>
         </div>
       </div>
     </main>
