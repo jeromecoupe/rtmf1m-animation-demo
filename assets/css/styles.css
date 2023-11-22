@@ -93,40 +93,46 @@
   }
 }
 
+@keyframes reelFromDown {
+  0% {
+    translate: 0 100%;
+  }
+
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes reelFromUp {
+  0% {
+    translate: 0 -100%;
+  }
+
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes projectIn {
+  0% {
+    opacity: 0;
+    translate: 0 60px;
+  }
+
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
 @keyframes slideUp {
   0% {
+    opacity: 0;
     transform: translate3d(0, 60px, 0);
   }
   100% {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideDown {
-  0% {
-    transform: translate3d(0, -60px, 0);
-  }
-  100% {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  100% {
     opacity: 1;
-  }
-}
-
-@keyframes heroParallax {
-  0% {
-    object-position: 50% 15%;
-  }
-
-  100% {
-    object-position: 50% 0%;
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -284,7 +290,7 @@ address {
   margin-bottom: 0.5em;
 }
 
-.c-heroheader__title > span {
+.c-heroheader__title span {
   display: block;
 }
 
@@ -578,6 +584,11 @@ address {
   }
 }
 
+.c-projectslist__item {
+  view-timeline-name: --projectTimeline;
+  view-timeline-axis: block;
+}
+
 @media all and (min-width: 750px) {
   .c-projectslist__item:nth-child(4n - 3) {
     grid-column: 1 / span 5;
@@ -606,6 +617,12 @@ address {
   justify-content: flex-start;
   align-items: stretch;
   gap: 18px;
+
+  animation-name: projectIn;
+  animation-timeline: --projectTimeline;
+  animation-range: entry 0% entry 50%;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
 }
 
 .c-projectcard__link {
@@ -658,6 +675,7 @@ a:hover .c-projectcard__title {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--grid-gutter);
+
   view-timeline-name: --reelTimeline;
   view-timeline-axis: block;
 }
@@ -685,7 +703,7 @@ a:hover .c-projectcard__title {
   content: "Play";
   text-align: center;
 
-  animation-name: slideUp;
+  animation-name: reelFromDown;
   animation-timeline: --reelTimeline;
   animation-range: cover 10% cover 50%;
   animation-timing-function: linear;
@@ -704,7 +722,7 @@ a:hover .c-projectcard__title {
   content: "Reel";
   text-align: center;
 
-  animation-name: slideDown;
+  animation-name: reelFromUp;
   animation-timeline: --reelTimeline;
   animation-range: cover 10% cover 50%;
   animation-timing-function: linear;
@@ -736,7 +754,8 @@ a:hover .c-projectcard__title {
 @media all and (min-width: 750px) {
   .c-reel__playerimage {
     animation-name: reelImage;
-    animation-timeline: view(block);
+
+    animation-timeline: --reelTimeline;
     animation-range: cover 10% cover 50%;
     animation-timing-function: linear;
     animation-fill-mode: both;

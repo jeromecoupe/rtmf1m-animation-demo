@@ -1,0 +1,23 @@
+{
+  "name": "rtmf1m-animations-demo",
+  "version": "1.0.0",
+  "description": "Demo site for transitions, animations, masks, scroll and view timelines, intersectionObserver, etc.",
+  "main": "index.js",
+  "scripts": {
+    "server": "browser-sync start --server \"./\" --files \"./**/*.html\" \"./**/*.css\" \"./**/*.js\"",
+    "dev": "npm run server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeromecoupe/rtmf1m-animation-demo.git"
+  },
+  "author": "Jérôme Coupé",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeromecoupe/rtmf1m-animation-demo/issues"
+  },
+  "homepage": "https://github.com/jeromecoupe/rtmf1m-animation-demo#readme",
+  "devDependencies": {
+    "browser-sync": "^2.29.3"
+  }
+}
