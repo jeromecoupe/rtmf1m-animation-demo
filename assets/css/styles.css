@@ -93,7 +93,7 @@
   }
 }
 
-@keyframes reelFromDown {
+@keyframes reelUp {
   0% {
     translate: 0 100%;
   }
@@ -103,7 +103,7 @@
   }
 }
 
-@keyframes reelFromUp {
+@keyframes reelDown {
   0% {
     translate: 0 -100%;
   }
@@ -113,15 +113,25 @@
   }
 }
 
-@keyframes projectIn {
-  0% {
+@keyframes projectsInOut {
+  entry 0% {
     opacity: 0;
     translate: 0 60px;
   }
 
-  100% {
+  cover 30% {
     opacity: 1;
     translate: 0 0;
+  }
+
+  exit 70% {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  exit 100% {
+    opacity: 0;
+    translate: 0 -60px;
   }
 }
 
@@ -214,11 +224,6 @@ address {
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto auto;
   background-color: var(--color-background-inverse);
-}
-@media all and (min-width: 1024px) {
-  .c-heroheader {
-    min-height: 80vh;
-  }
 }
 
 /* header navbar */
@@ -441,7 +446,7 @@ address {
 
 @media all and (min-width: 750px) {
   .c-mobilemenu {
-    padding: calc(36 / 16 * 1rem);
+    padding: calc(48 / 16 * 1rem);
   }
 }
 
@@ -566,12 +571,6 @@ address {
   }
 }
 
-@media all and (min-width: 750px) {
-  .c-projectslist {
-    grid-template-columns: repeat(12, 1fr);
-  }
-}
-
 @media all and (min-width: 1024px) {
   .c-projectslist {
     row-gap: calc(90 / 16 * 1rem);
@@ -582,11 +581,6 @@ address {
   .c-projectslist {
     row-gap: calc(120 / 16 * 1rem);
   }
-}
-
-.c-projectslist__item {
-  view-timeline-name: --projectTimeline;
-  view-timeline-axis: block;
 }
 
 @media all and (min-width: 750px) {
@@ -618,11 +612,12 @@ address {
   align-items: stretch;
   gap: 18px;
 
-  animation-name: projectIn;
-  animation-timeline: --projectTimeline;
-  animation-range: entry 0% entry 50%;
+  animation-name: projectsInOut;
+  animation-duration: 0.2s;
   animation-timing-function: ease-out;
   animation-fill-mode: both;
+
+  animation-timeline: view(block);
 }
 
 .c-projectcard__link {
@@ -673,7 +668,8 @@ a:hover .c-projectcard__title {
 
 .c-reel {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
   gap: var(--grid-gutter);
 
   view-timeline-name: --reelTimeline;
@@ -682,10 +678,8 @@ a:hover .c-projectcard__title {
 
 @media all and (min-width: 750px) {
   .c-reel {
-    grid-template-columns: 1fr auto 1fr;
-
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     gap: calc(36 / 16 * 1rem);
-    align-items: center;
   }
 }
 
@@ -703,10 +697,10 @@ a:hover .c-projectcard__title {
   content: "Play";
   text-align: center;
 
-  animation-name: reelFromDown;
+  animation-name: reelUp;
   animation-timeline: --reelTimeline;
   animation-range: cover 10% cover 50%;
-  animation-timing-function: linear;
+  animation-timing-function: ease-out;
   animation-fill-mode: both;
 }
 
@@ -722,10 +716,10 @@ a:hover .c-projectcard__title {
   content: "Reel";
   text-align: center;
 
-  animation-name: reelFromUp;
+  animation-name: reelDown;
   animation-timeline: --reelTimeline;
   animation-range: cover 10% cover 50%;
-  animation-timing-function: linear;
+  animation-timing-function: ease-out;
   animation-fill-mode: both;
 }
 
@@ -757,7 +751,7 @@ a:hover .c-projectcard__title {
 
     animation-timeline: --reelTimeline;
     animation-range: cover 10% cover 50%;
-    animation-timing-function: linear;
+    animation-timing-function: ease-out;
     animation-fill-mode: both;
   }
 }
