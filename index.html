@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animations / transitions demo</title>
+    <meta
+      name="description"
+      content="Demo site for CSS animations, JS animations masks and blend modes." />
     <link rel="stylesheet" href="assets/css/styles.css" />
     <script type="module" src="assets/js/main.js"></script>
   </head>
@@ -14,7 +17,11 @@
           <div class="l-container l-container--large c-navbar__content">
             <p class="c-navbar__logo">
               <a href="">
-                <img src="assets/img/logo.svg" alt="CasaProds" />
+                <img
+                  src="assets/img/logo.svg"
+                  width="144"
+                  height="24"
+                  alt="CasaProds" />
               </a>
             </p>
             <nav class="c-navbar__nav">
@@ -60,10 +67,17 @@
       </div>
       <div class="c-heroheader__img">
         <img
-          src="assets/img/hero_images/home_astronaut.jpg"
-          srcset=""
+          src="assets/img/hero_images/800x600/astronaut.jpg"
+          srcset="
+            assets/img/hero_images/800x600/astronaut.jpg    800w,
+            assets/img/hero_images/1204x768/astronaut.jpg  1024w,
+            assets/img/hero_images/1500x1125/astronaut.jpg 1500w
+          "
+          sizes="100vw"
           decoding="async"
-          alt="" />
+          width="1500"
+          height="1125"
+          alt="Historical picture of astronaut on the moon" />
       </div>
 
       <div class="c-mobilemenu js-mobilemenu">
@@ -123,7 +137,11 @@
                       <img
                         class="c-projectcard__img o-fluidimg"
                         src="assets/img/projects/bmx.jpg"
-                        alt="BMX figure with the bike in the air" />
+                        alt="BMX figure with the bike in the air"
+                        width="800"
+                        height="600"
+                        loading="lazy"
+                        decoding="async" />
                     </div>
                     <h2 class="c-projectcard__title">
                       Throw your bike in the air
@@ -141,7 +159,11 @@
                       <img
                         class="c-projectcard__img o-fluidimg"
                         src="assets/img/projects/girl.jpg"
-                        alt="Girl smiling with a camera in her hands" />
+                        alt="Girl smiling with a camera in her hands"
+                        width="800"
+                        height="600"
+                        loading="lazy"
+                        decoding="async" />
                     </div>
                     <h2 class="c-projectcard__title">Women in filmmaking</h2>
                     <p class="c-projectcard__description">
@@ -157,7 +179,11 @@
                       <img
                         class="c-projectcard__img o-fluidimg"
                         src="assets/img/projects/graffiti.jpg"
-                        alt="BMX figure with the bike in the air" />
+                        alt="BMX figure with the bike in the air"
+                        width="800"
+                        height="600"
+                        loading="lazy"
+                        decoding="async" />
                     </div>
                     <h2 class="c-projectcard__title">
                       The many faces of street art
@@ -175,7 +201,11 @@
                       <img
                         class="c-projectcard__img o-fluidimg"
                         src="assets/img/projects/skate.jpg"
-                        alt="Skater jumping on top of a halfpipe" />
+                        alt="Skater jumping on top of a halfpipe"
+                        width="800"
+                        height="600"
+                        loading="lazy"
+                        decoding="async" />
                     </div>
                     <h2 class="c-projectcard__title">Skate or Die</h2>
                     <p class="c-projectcard__description">
