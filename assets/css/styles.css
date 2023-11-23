@@ -116,22 +116,22 @@
 @keyframes projectsInOut {
   entry 0% {
     opacity: 0;
-    translate: 0 90px;
+    translate: 0 120px;
   }
 
-  entry 30% {
+  entry 40% {
     opacity: 1;
     translate: 0 0;
   }
 
-  exit 70% {
+  exit 50% {
     opacity: 1;
     translate: 0 0;
   }
 
   exit 100% {
     opacity: 0;
-    translate: 0 -90px;
+    translate: 0 -120px;
   }
 }
 
@@ -589,6 +589,11 @@ address {
   }
 }
 
+.c-projectslist__item {
+  view-timeline-name: --projectTimeline;
+  view-timeline-axis: block;
+}
+
 @media all and (min-width: 750px) {
   .c-projectslist__item:nth-child(4n - 3) {
     grid-column: 1 / span 5;
@@ -618,12 +623,11 @@ address {
   align-items: stretch;
   gap: 18px;
 
+  animation-timeline: --projectTimeline;
   animation-name: projectsInOut;
   animation-duration: 0.2s;
   animation-timing-function: ease-out;
   animation-fill-mode: both;
-
-  animation-timeline: view(block);
 }
 
 .c-projectcard__link {
