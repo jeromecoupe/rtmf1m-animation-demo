@@ -119,7 +119,7 @@
     translate: 0 60px;
   }
 
-  cover 30% {
+  entry 33% {
     opacity: 1;
     translate: 0 0;
   }
@@ -301,7 +301,7 @@ address {
 
 .c-heroheader__intro {
   font-size: calc(18 / 16 * 1rem);
-  max-width: 54ch;
+  max-width: 52ch;
 }
 
 @media all and (min-width: 1200px) {
@@ -446,7 +446,7 @@ address {
 
 @media all and (min-width: 750px) {
   .c-mobilemenu {
-    padding: calc(48 / 16 * 1rem);
+    padding: calc(30 / 16 * 1rem);
   }
 }
 
@@ -559,14 +559,20 @@ address {
   padding: 0;
 
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   column-gap: var(--grid-gutter);
   row-gap: calc(36 / 16 * 1rem);
 }
 
+@media all and (min-width: 500px) {
+  .c-projectslist {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media all and (min-width: 750px) {
   .c-projectslist {
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
     row-gap: calc(60 / 16 * 1rem);
   }
 }
@@ -635,7 +641,7 @@ address {
 }
 
 a:hover .c-projectcard__img {
-  transform: scale(1.008);
+  transform: scale(1.012);
 }
 
 .c-projectcard__title {
@@ -644,7 +650,7 @@ a:hover .c-projectcard__img {
   line-height: 1.32;
   font-family: var(--fontstack-alt);
   color: var(--color-text);
-  margin-block-end: calc(6 / 16 * 1rem);
+  margin-block-end: calc(3 / 16 * 1rem);
 }
 
 a:hover .c-projectcard__title {
@@ -655,7 +661,7 @@ a:hover .c-projectcard__title {
 
 .c-projectcard__description {
   font-weight: 500;
-  font-size: calc(20 / 16 * 1rem);
+  font-size: calc(18 / 16 * 1rem);
   line-height: 1.32;
   font-family: var(--fontstack-alt);
   color: var(--color-text-offset);
@@ -701,7 +707,7 @@ a:hover .c-projectcard__title {
 
   animation-name: reelUp;
   animation-timeline: --reelTimeline;
-  animation-range: entry 20% cover 50%;
+  animation-range: entry 20% cover 60%;
   animation-timing-function: ease-out;
   animation-fill-mode: both;
 }
@@ -711,6 +717,7 @@ a:hover .c-projectcard__title {
     text-align: end;
 
     animation-name: reelLeft;
+    animation-range: entry 20% cover 50%;
   }
 }
 
@@ -747,10 +754,9 @@ a:hover .c-projectcard__title {
   z-index: 1;
 }
 
-@media all and (min-width: 1024px) {
+@media all and (min-width: 750px) {
   .c-reel__playerimage {
     animation-name: reelImage;
-
     animation-timeline: --reelTimeline;
     animation-range: cover 10% cover 50%;
     animation-timing-function: ease-out;
@@ -944,13 +950,13 @@ a:hover .c-projectcard__title {
 
 @media all and (min-width: 750px) {
   .l-container {
-    padding-inline: calc(48 / 16 * 1rem);
+    padding-inline: calc(30 / 16 * 1rem);
   }
 }
 
 @media all and (min-width: 1024px) {
   .l-container {
-    padding-inline: calc(60 / 16 * 1rem);
+    padding-inline: calc(48 / 16 * 1rem);
   }
 }
 
