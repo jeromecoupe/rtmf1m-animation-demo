@@ -119,7 +119,7 @@
     translate: 0 120px;
   }
 
-  entry 40% {
+  entry 100% {
     opacity: 1;
     translate: 0 0;
   }
